@@ -3,13 +3,14 @@
     What do you want to learn Today ?
   
   .p-4
-  .form-inline.my-2.my-lg-0
-    = form_tag(courses_path, method: :get) do
+  - if current_user
+    = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
       .input-group
-        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: 'Search', class:'form-control mr-sm-2'
+        = f.search_field :title_cont, class: 'form-control mr-sm-2', style: 'float: left; width: 150px;', placeholder: 'Find course'
         %span.input-group-append
           %button.btn.btn-primary.btn-sm{:type => "submit"}
             %span.fa.fa-search{"aria-hidden" => "true"}
+  
             
 .card-group
   .card.card-body

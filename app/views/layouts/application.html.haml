@@ -2,6 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
     %script{:src => "https://kit.fontawesome.com/a076d05399.js"}
@@ -20,3 +21,6 @@
     .container
       %p
       = yield
+    %br
+    .bg-success
+      = render 'layouts/footer'
