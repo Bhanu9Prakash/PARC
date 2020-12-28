@@ -7,6 +7,10 @@
     .card-footer
         .text-center
             = number_to_currency(course.price, unit: "Rs ",  strip_insignificant_zeros: true)
+    .card-footer
+        .fa.fa-book
+        = course.lessons.count
+    .card-footer    
         .row
             .col-md-6
                 .fa.fa-globe-africa
@@ -15,7 +19,7 @@
                 .text-right
                     .fa.fa-signal
                     = course.level
-        
+    .card-footer    
         .row
             .col-md-6
                 .fa.fa-clock-o

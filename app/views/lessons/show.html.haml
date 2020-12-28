@@ -1,0 +1,8 @@
+= link_to 'Courses', courses_path, class: 'btn btn-light'
+\/
+= link_to @lesson.course.title, course_path(@lesson.course), class: 'btn btn-light'
+= link_to @lesson.title, lesson_path(@lesson), class: 'btn btn-light'
+%p
+= render 'lessons/lesson', lesson: @lesson
+
+= link_to 'Back to Course', course_path(@lesson.course)

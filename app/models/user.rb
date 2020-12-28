@@ -12,8 +12,14 @@ class User < ApplicationRecord
   
   has_many :courses
   
+  extend FriendlyId
+  friendly_id :title, :use => :slugged
+  
   after_create :assign_default_role
   
+  def online?
+    updated_at > 2.minutes.ago
+  end
   def assign_default_role
     if User.count == 1
       self.add_role(:admin) if self.roles.blank?
